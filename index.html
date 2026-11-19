@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Logimacill Advisory Ltd | Insight. Strategy. Growth.</title>
+
+<meta name="description" content="Logimacill Advisory Ltd provides business advisory, legal advisory and travel consultancy services. Insight. Strategy. Growth.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --burgundy: #750c25;
+    --dark-burgundy: #4b0718;
+    --gold: #c99a43;
+    --cream: #faf7f4;
+    --dark: #252329;
+    --muted: #77737a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.97);
+    box-shadow: 0 3px 18px rgba(0,0,0,.07);
+}
+
+.nav {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.brand {
+    color: var(--burgundy);
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.brand small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 7px;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navlinks a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.navlinks a:hover {
+    color: var(--burgundy);
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: var(--burgundy);
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid var(--burgundy);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--dark-burgundy);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--burgundy);
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--burgundy);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(90deg,
+        rgba(48,5,19,.94) 0%,
+        rgba(75,7,24,.84) 48%,
+        rgba(75,7,24,.25) 100%),
+        url('logimacill-team.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+    padding: 100px 0;
+}
+
+.eyebrow {
+    color: #edc77e;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(43px, 6vw, 76px);
+    line-height: 1.12;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #e7bd73;
+}
+
+.hero p {
+    color: #f1e7e9;
+    max-width: 550px;
+    font-size: 17px;
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 95px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+}
+
+.section-heading .eyebrow {
+    color: var(--burgundy);
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 43px);
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 span {
+    color: var(--burgundy);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* INTRODUCTION */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    min-height: 420px;
+    border-radius: 10px;
+    background:
+        linear-gradient(135deg, rgba(117,12,37,.15), rgba(201,154,67,.15)),
+        url('logimacill-team.jpg') center/cover no-repeat;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 39px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.about-text h2 span {
+    color: var(--burgundy);
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 17px;
+}
+
+.about-highlight {
+    border-left: 4px solid var(--gold);
+    padding: 14px 20px;
+    margin: 25px 0;
+    background: var(--cream);
+    color: var(--burgundy);
+    font-weight: 700;
+}
+
+/* SERVICES */
+
+.services {
+    background: var(--cream);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 38px 30px;
+    border-radius: 8px;
+    border: 1px solid #eee5e4;
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gold);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(75,7,24,.10);
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    background: #f8edf0;
+    color: var(--burgundy);
+    font-size: 26px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 13px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.learn-more {
+    color: var(--burgundy);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* WHY CHOOSE US */
+
+.why {
+    background: var(--dark-burgundy);
+    color: white;
+}
+
+.why .section-heading h2 {
+    color: white;
+}
+
+.why .section-heading p {
+    color: #e6d2d7;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.why-item {
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.why-item i {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.why-item h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.why-item p {
+    color: #e6d2d7;
+    font-size: 13px;
+}
+
+/* PROCESS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.process-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.process-number {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    color: white;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.process-item h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.process-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* CTA */
+
+.cta {
+    background: linear-gradient(120deg, var(--burgundy), var(--dark-burgundy));
+    color: white;
+    padding: 65px 35px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #f1dfe3;
+    margin-bottom: 25px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 55px;
+}
+
+.contact-info {
+    background: var(--burgundy);
+    color: white;
+    padding: 40px;
+    border-radius: 9px;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #f0dce1;
+    margin-bottom: 23px;
+    font-size: 14px;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    align-items: center;
+}
+
+.contact-detail i {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e5dddd;
+    border-radius: 5px;
+    font: inherit;
+    outline: none;
+    background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--burgundy);
+}
+
+.field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* FOOTER */
+
+footer {
+    background: #21141a;
+    color: white;
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: white;
+}
+
+.footer-grid p {
+    color: #cdbdc2;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.footer-grid h4 {
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    display: grid;
+    gap: 10px;
+    color: #e2d6da;
+    font-size: 13px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #50313b;
+    padding-top: 20px;
+    text-align: center;
+    color: #bbaab0;
+    font-size: 12px;
+}
+
+/* FLOATING CONTACT */
+
+.back-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--burgundy);
+    color: white;
+    z-index: 500;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+    .navlinks {
+        display: none;
+        position: absolute;
+        top: 88px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .navlinks.open {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .nav .btn {
+        display: none;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .hero {
+        min-height: 580px;
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        padding: 75px 0;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .service-grid,
+    .why-grid,
+    .process-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 300px;
+    }
+
+    .cta {
+        padding: 45px 20px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+    <a href="#home" class="brand">
+        LOGIMACILL
+        <small>ADVISORY LTD</small>
+    </a>
+
+    <button class="menu" onclick="navToggle()" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="navlinks" id="navlinks">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn">
+        Get Consultation <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+
+    <div class="eyebrow">Your Trusted Advisory Partner</div>
+
+    <h1>
+        Insight.<br>
+        Strategy.<br>
+        <span>Growth.</span>
+    </h1>
+
+    <p>
+        Empowering businesses and individuals through
+        professional business advisory, legal advisory
+        and travel consultancy solutions.
+    </p>
+
+    <div class="hero-actions">
+        <a href="#services" class="btn">
+            Explore Our Services
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+            Discover Logimacill
+        </a>
+    </div>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<div class="container about-grid">
+
+    <div class="about-image" role="img"
+         aria-label="Logimacill Advisory team image"></div>
+
+    <div class="about-text">
+
+        <div class="eyebrow">Who We Are</div>
+
+        <h2>
+            Moving You Forward With
+            <span>Confidence.</span>
+        </h2>
+
+        <p>
+            Logimacill Advisory Ltd is an advisory firm
+            focused on helping businesses and individuals
+            make informed decisions and move confidently
+            towards their goals.
+        </p>
+
+        <p>
+            Through our business advisory, legal advisory
+            and travel consultancy services, we aim to
+            provide thoughtful guidance and practical
+            solutions tailored to our clients' needs.
+        </p>
+
+        <div class="about-highlight">
+            Each day brings us closer to you.
+        </div>
+
+        <a href="#contact" class="btn">
+            Talk to Our Team
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">What We Do</div>
+
+        <h2>Our <span>Advisory Services</span></h2>
+
+        <p>
+            Three areas of expertise. One commitment:
+            helping you make better decisions and move forward.
+        </p>
+    </div>
+
+    <div class="service-grid">
+
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>Business Advisory</h3>
+
+            <p>
+                Strategic business guidance, planning and
+                professional support to help businesses
+                identify opportunities and achieve sustainable growth.
+            </p>
+
+            <a href="#contact" class="learn-more">
+                Enquire Now →
+            </a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <h3>Legal Advisory</h3>
+
+            <p>
+                Guidance on legal matters, documentation
+                and compliance to help clients understand
+                their obligations and make informed decisions.
+            </p>
+
+            <a href="#contact" class="learn-more">
+                Enquire Now →
+            </a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+
+            <h3>Travel Consultancy</h3>
+
+            <p>
+                Travel planning and consultancy support
+                designed to make your travel arrangements
+                more informed, organised and convenient.
+            </p>
+
+            <a href="#contact" class="learn-more">
+                Enquire Now →
+            </a>
+        </article>
+
+    </div>
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="section why" id="why">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">The Logimacill Difference</div>
+
+        <h2>Why Work With Us?</h2>
+
+        <p>
+            We believe good advice creates better decisions
+            and better opportunities.
+        </p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-item">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>Client Focused</h3>
+            <p>We place our clients' needs and objectives at the centre of our approach.</p>
+        </div>
+
+        <div class="why-item">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h3>Strategic Thinking</h3>
+            <p>We value informed decisions and practical solutions.</p>
+        </div>
+
+        <div class="why-item">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>Professional Approach</h3>
+            <p>We are committed to professionalism and responsible service.</p>
+        </div>
+
+        <div class="why-item">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>Personal Attention</h3>
+            <p>We aim to understand each client's unique requirements.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">Our Approach</div>
+        <h2>How We <span>Work</span></h2>
+        <p>A straightforward approach to understanding your needs and providing guidance.</p>
+    </div>
+
+    <div class="process-grid">
+
+        <div class="process-item">
+            <div class="process-number">01</div>
+            <h3>Understand</h3>
+            <p>We listen to your needs, challenges and objectives.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="process-number">02</div>
+            <h3>Advise</h3>
+            <p>We explore your requirements and discuss suitable solutions.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="process-number">03</div>
+            <h3>Move Forward</h3>
+            <p>We support you as you take the next steps towards your goals.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+<div class="container">
+    <div class="cta">
+
+        <div class="eyebrow">Let's Begin Your Journey</div>
+
+        <h2>Your Next Step Starts Here.</h2>
+
+        <p>
+            Whether you are growing a business, seeking
+            advisory support or planning your next journey,
+            we are ready to hear from you.
+        </p>
+
+        <a href="#contact" class="btn btn-outline">
+            Get in Touch
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">Contact Us</div>
+        <h2>Let's <span>Talk.</span></h2>
+        <p>Tell us what you need. Our team would be glad to hear from you.</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-info">
+
+            <h3>Connect With Logimacill</h3>
+
+            <p>
+                Reach out to discuss your requirements
+                or make an enquiry about our services.
+            </p>
+
+            <!-- Replace with official company details -->
+
+            <div class="contact-detail">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Company email to be added</span>
+            </div>
+
+            <div class="contact-detail">
+                <i class="fa-solid fa-phone"></i>
+                <span>Company phone number to be added</span>
+            </div>
+
+            <div class="contact-detail">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Company office location to be added</span>
+            </div>
+
+        </div>
+
+        <div class="contact-form">
+
+            <h3>Send an Enquiry</h3>
+
+            <form id="contactForm">
+
+                <div class="field">
+                    <label for="name">Full Name *</label>
+                    <input id="name" name="name" required
+                           placeholder="Enter your full name">
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address *</label>
+                    <input id="email" name="email" type="email"
+                           required placeholder="Enter your email">
+                </div>
+
+                <div class="field">
+                    <label for="service">Service of Interest *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Business Advisory</option>
+                        <option>Legal Advisory</option>
+                        <option>Travel Consultancy</option>
+                        <option>General Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="message">How can we assist you? *</label>
+                    <textarea id="message" name="message"
+                              required placeholder="Write your enquiry here..."></textarea>
+                </div>
+
+                <button class="btn" type="submit">
+                    Submit Enquiry
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+                <p id="formStatus" style="margin-top:15px;font-size:13px;color:#750c25"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-brand">LOGIMACILL</div>
+            <strong style="color:#e6bd79;letter-spacing:3px;font-size:11px">
+                ADVISORY LTD
+            </strong>
+
+            <p>
+                Insight. Strategy. Growth.<br>
+                Each day brings us closer to you.
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Our Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Our Services</h4>
+            <div class="footer-links">
+                <a href="#services">Business Advisory</a>
+                <a href="#services">Legal Advisory</a>
+                <a href="#services">Travel Consultancy</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Logimacill Advisory Ltd. All Rights Reserved.
+        <br>
+        Insight. Strategy. Growth.
+    </div>
+
+</div>
+</footer>
+
+<a href="#home" class="back-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+<script>
+function navToggle() {
+    document.getElementById('navlinks').classList.toggle('open');
+}
+
+document.querySelectorAll('.navlinks a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navlinks').classList.remove('open');
+    });
+});
+
+/* Enquiry form demonstration.
+   Connect a form service before accepting live enquiries. */
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    document.getElementById('formStatus').textContent =
+        'Thank you for your enquiry. Please connect the company email service to enable delivery.';
+
+});
+</script>
+
+</body>
+</html>
