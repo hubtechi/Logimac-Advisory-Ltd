@@ -655,6 +655,95 @@ footer {
         font-size: 29px;
     }
 }
+
+
+/* FOUNDING MEMBERS */
+.founders-section {
+    background: var(--cream);
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.founder-card {
+    text-align: center;
+    padding: 12px 8px;
+}
+
+.founder-photo {
+    width: 170px;
+    height: 170px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #f0e5e5, #e7d9d5);
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 24px rgba(75, 7, 24, .12);
+    color: var(--burgundy);
+}
+
+.founder-photo i {
+    font-size: 54px;
+    opacity: .65;
+}
+
+.founder-card h3 {
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+}
+
+.founder-card p {
+    color: var(--burgundy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.founder-note {
+    max-width: 680px;
+    margin: 35px auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+@media(max-width: 900px) {
+    .founders-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 30px;
+    }
+}
+
+@media(max-width: 600px) {
+    .founders-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 12px;
+    }
+
+    .founder-photo {
+        width: 135px;
+        height: 135px;
+    }
+
+    .founder-photo i {
+        font-size: 42px;
+    }
+
+    .founder-card h3 {
+        font-size: 16px;
+    }
+}
+
 </style>
 </head>
 
@@ -675,6 +764,7 @@ footer {
     <nav class="navlinks" id="navlinks">
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
+        <a href="#founders">Founders</a>
         <a href="#services">Our Services</a>
         <a href="#why">Why Choose Us</a>
         <a href="#contact">Contact</a>
@@ -761,6 +851,73 @@ footer {
         </a>
 
     </div>
+
+</div>
+</section>
+
+
+
+<!-- FOUNDING MEMBERS -->
+<section class="section founders-section" id="founders">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">The People Behind Logimac</div>
+        <h2>Meet Our <span>Founding Members</span></h2>
+        <p>
+            The individuals behind the vision, values and direction
+            of Logimac Advisory Ltd.
+        </p>
+    </div>
+
+    <div class="founders-grid">
+
+        <article class="founder-card">
+            <div class="founder-photo" aria-label="Photograph space for Founding Member 1">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo" aria-label="Photograph space for Founding Member 2">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo" aria-label="Photograph space for Founding Member 3">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo" aria-label="Photograph space for Founding Member 4">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo" aria-label="Photograph space for Founding Member 5">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+    </div>
+
+    <p class="founder-note">
+        Founder photographs and profile details can be added to each space
+        when the official portraits and names are available.
+    </p>
 
 </div>
 </section>
@@ -1057,6 +1214,7 @@ footer {
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
+                <a href="#founders">Founders</a>
                 <a href="#services">Our Services</a>
                 <a href="#contact">Contact</a>
             </div>
