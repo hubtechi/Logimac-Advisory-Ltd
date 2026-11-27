@@ -422,6 +422,25 @@ header {
     box-shadow: 0 15px 35px rgba(75,7,24,.10);
 }
 
+/* ACTIVE SERVICE: highlight only the selected service with a maroon border */
+.service-card.active-service {
+    border: 2px solid var(--burgundy);
+    box-shadow: 0 12px 30px rgba(117,12,37,.14);
+    transform: translateY(-4px);
+}
+
+.service-card.active-service::before {
+    background: var(--burgundy);
+    height: 5px;
+}
+
+.hero-service-card:focus-visible,
+.hero-service-link:focus-visible,
+.dropdown-menu a:focus-visible {
+    outline: 3px solid var(--burgundy);
+    outline-offset: 4px;
+}
+
 .service-icon {
     width: 60px;
     height: 60px;
@@ -967,7 +986,7 @@ footer {
 
         <!-- BUSINESS ADVISORY -->
 
-        <article class="hero-service-card">
+        <article class="hero-service-card" tabindex="0" role="link" data-service-target="business-advisory">
 
             <div class="hero-service-icon">
                 <i class="fa-solid fa-chart-line"></i>
@@ -990,7 +1009,7 @@ footer {
 
         <!-- LEGAL ADVISORY -->
 
-        <article class="hero-service-card">
+        <article class="hero-service-card" tabindex="0" role="link" data-service-target="legal-advisory">
 
             <div class="hero-service-icon">
                 <i class="fa-solid fa-scale-balanced"></i>
@@ -1013,7 +1032,7 @@ footer {
 
         <!-- TRAVEL CONSULTANCY -->
 
-        <article class="hero-service-card">
+        <article class="hero-service-card" tabindex="0" role="link" data-service-target="travel-consultancy">
 
             <div class="hero-service-icon">
                 <i class="fa-solid fa-plane-departure"></i>
@@ -1036,7 +1055,7 @@ footer {
 
         <!-- CUSTOMER EXPERIENCE -->
 
-        <article class="hero-service-card">
+        <article class="hero-service-card" tabindex="0" role="link" data-service-target="customer-experience">
 
             <div class="hero-service-icon">
                 <i class="fa-solid fa-headset"></i>
@@ -1100,136 +1119,12 @@ footer {
                 Each day brings us closer to you.
             </div>
 
-            <a href="#services" class="btn">
+            <a href="#why" class="btn">
                 Explore Our Services
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
 
         </div>
-
-    </div>
-
-</div>
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="section services" id="services">
-
-<div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">What We Do</div>
-
-        <h2>Our <span>Services</span></h2>
-
-        <p>
-            Professional solutions designed to support
-            individuals, businesses and organisations
-            across different areas of need.
-        </p>
-
-    </div>
-
-    <div class="service-grid">
-
-        <!-- BUSINESS ADVISORY -->
-
-        <article class="service-card" id="business-advisory">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-chart-line"></i>
-            </div>
-
-            <h3>Business Advisory</h3>
-
-            <p>
-                We provide strategic business guidance,
-                planning support and professional insights
-                to help businesses improve operations,
-                make informed decisions and achieve sustainable growth.
-            </p>
-
-            <a href="#contact" class="learn-more">
-                Enquire About This Service
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </article>
-
-        <!-- LEGAL ADVISORY -->
-
-        <article class="service-card" id="legal-advisory">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
-            </div>
-
-            <h3>Legal Advisory</h3>
-
-            <p>
-                We provide guidance and advisory support
-                on legal matters, documentation, regulatory
-                requirements and compliance to help clients
-                navigate legal processes and decisions.
-            </p>
-
-            <a href="#contact" class="learn-more">
-                Enquire About This Service
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </article>
-
-        <!-- TRAVEL CONSULTANCY -->
-
-        <article class="service-card" id="travel-consultancy">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-plane-departure"></i>
-            </div>
-
-            <h3>Travel Consultancy</h3>
-
-            <p>
-                Our travel consultancy services provide
-                guidance, planning support and assistance
-                with travel arrangements to help clients
-                plan their journeys conveniently.
-            </p>
-
-            <a href="#contact" class="learn-more">
-                Enquire About This Service
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </article>
-
-        <!-- CUSTOMER EXPERIENCE -->
-
-        <article class="service-card" id="customer-experience">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-headset"></i>
-            </div>
-
-            <h3>Customer Experience Training & Management</h3>
-
-            <p>
-                We support organisations in improving customer
-                service delivery through customer experience
-                training, service quality management,
-                team development and performance improvement.
-            </p>
-
-            <a href="#contact" class="learn-more">
-                Enquire About This Service
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </article>
 
     </div>
 
@@ -1316,72 +1211,6 @@ footer {
 </section>
 
 
-<!-- PROCESS -->
-
-<section class="section">
-
-<div class="container">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">How We Work</div>
-
-        <h2>Our <span>Approach</span></h2>
-
-        <p>
-            We take a structured approach to understanding
-            your needs and delivering the right support.
-        </p>
-
-    </div>
-
-    <div class="process-grid">
-
-        <div class="process-item">
-
-            <div class="process-number">01</div>
-
-            <h3>Understand Your Needs</h3>
-
-            <p>
-                We listen to your concerns, goals,
-                challenges and requirements.
-            </p>
-
-        </div>
-
-        <div class="process-item">
-
-            <div class="process-number">02</div>
-
-            <h3>Provide Guidance</h3>
-
-            <p>
-                We explore relevant solutions and
-                provide professional guidance.
-            </p>
-
-        </div>
-
-        <div class="process-item">
-
-            <div class="process-number">03</div>
-
-            <h3>Support Your Progress</h3>
-
-            <p>
-                We work towards helping you move forward
-                with confidence and clarity.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-
 <!-- FOUNDING MEMBERS -->
 
 <!--
@@ -1454,32 +1283,6 @@ footer {
 </div>
 </section>
 -->
-
-
-<!-- CALL TO ACTION -->
-
-<section class="section">
-
-<div class="container">
-
-    <div class="cta">
-
-        <h2>Ready to Move Forward?</h2>
-
-        <p>
-            Let Logimac Advisory Ltd help you navigate
-            your next step with confidence.
-        </p>
-
-        <a href="#contact" class="btn btn-outline">
-            Get in Touch
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-    </div>
-
-</div>
-</section>
 
 
 <!-- CONTACT -->
@@ -1755,23 +1558,62 @@ document.addEventListener('click', function(event) {
 });
 
 
-/* CLOSE MOBILE MENU AFTER CLICKING NAV LINKS */
+/* SERVICE SELECTION: highlight only the service currently selected */
+function activateService(serviceId, shouldScroll = false) {
+    const serviceCards = document.querySelectorAll('.service-card');
+    const selectedCard = document.getElementById(serviceId);
 
-document.querySelectorAll('.navlinks a').forEach(link => {
+    if (!selectedCard) return;
 
-    link.addEventListener('click', () => {
+    serviceCards.forEach(card => {
+        const isSelected = card.id === serviceId;
+        card.classList.toggle('active-service', isSelected);
 
-        document.getElementById('navlinks').classList.remove('open');
-
-        document.getElementById('servicesDropdown').classList.remove('show');
-
-        document.getElementById('servicesDropdownButton')
-            .setAttribute('aria-expanded', 'false');
-
+        if (isSelected) {
+            card.setAttribute('aria-current', 'true');
+        } else {
+            card.removeAttribute('aria-current');
+        }
     });
 
+    if (shouldScroll) {
+        selectedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+/* Clicking a top service card selects and scrolls to its matching service */
+document.querySelectorAll('.hero-service-card[data-service-target]').forEach(card => {
+    card.addEventListener('click', event => {
+        if (event.target.closest('a')) return;
+        activateService(card.dataset.serviceTarget, true);
+    });
+
+    card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activateService(card.dataset.serviceTarget, true);
+        }
+    });
 });
 
+/* Dropdown, footer and other service links update the same active highlight */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const targetId = link.getAttribute('href').slice(1);
+
+    if (['business-advisory', 'legal-advisory', 'travel-consultancy', 'customer-experience'].includes(targetId)) {
+        link.addEventListener('click', () => activateService(targetId));
+    }
+});
+
+/* Close mobile menu after clicking navigation links */
+document.querySelectorAll('.navlinks a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navlinks').classList.remove('open');
+        document.getElementById('servicesDropdown').classList.remove('show');
+        document.getElementById('servicesDropdownButton')
+            .setAttribute('aria-expanded', 'false');
+    });
+});
 
 /* ENQUIRY FORM DEMONSTRATION */
 
