@@ -7,7 +7,7 @@
 
 <title>Logimac Advisory Ltd | Insight. Strategy. Growth.</title>
 
-<meta name="description" content="Logimacill Advisory Ltd provides business advisory, legal advisory and travel consultancy services. Insight. Strategy. Growth.">
+<meta name="description" content="Logimac Advisory Ltd provides business advisory, legal advisory, travel consultancy and customer experience training and management services.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +53,8 @@ a {
     margin: auto;
 }
 
+/* HEADER */
+
 header {
     position: sticky;
     top: 0;
@@ -66,38 +68,84 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .brand {
-    color: var(--burgundy);
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.05;
+    display: flex;
+    align-items: center;
 }
 
-.brand small {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-top: 7px;
+.brand img {
+    height: 70px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
 }
 
 .navlinks {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 22px;
 }
 
-.navlinks a {
+.navlinks > a,
+.dropdown-toggle {
     font-size: 13px;
     font-weight: 600;
     transition: .3s;
 }
 
-.navlinks a:hover {
+.navlinks > a:hover,
+.dropdown-toggle:hover {
+    color: var(--burgundy);
+}
+
+/* SERVICES DROPDOWN */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 245px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 11px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.dropdown-menu a:hover {
+    background: var(--cream);
     color: var(--burgundy);
 }
 
@@ -142,60 +190,7 @@ header {
     cursor: pointer;
 }
 
-/* HERO */
-
-.hero {
-    min-height: 650px;
-    background:
-        linear-gradient(90deg,
-        rgba(48,5,19,.94) 0%,
-        rgba(75,7,24,.84) 48%,
-        rgba(75,7,24,.25) 100%),
-        url('logimacill-team.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.hero-content {
-    max-width: 650px;
-    padding: 100px 0;
-}
-
-.eyebrow {
-    color: #edc77e;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(43px, 6vw, 76px);
-    line-height: 1.12;
-    margin-bottom: 24px;
-}
-
-.hero h1 span {
-    color: #e7bd73;
-}
-
-.hero p {
-    color: #f1e7e9;
-    max-width: 550px;
-    font-size: 17px;
-    margin-bottom: 32px;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-/* SERVICE SELECTION HERO */
+/* HERO / SERVICE SELECTION */
 
 .service-hero {
     padding: 65px 0 80px;
@@ -206,6 +201,15 @@ header {
 
 .service-hero-heading {
     margin-bottom: 40px;
+}
+
+.eyebrow {
+    color: #edc77e;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .service-hero-heading h1 {
@@ -220,82 +224,76 @@ header {
     color: var(--burgundy);
 }
 
-.service-hero-heading p {
-    max-width: 600px;
-    color: var(--muted);
-    font-size: 17px;
-}
-
 .service-hero-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .hero-service-card {
-    min-height: 350px;
-    padding: 35px;
+    min-height: 320px;
+    padding: 25px 20px;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(75, 7, 24, .07);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(75,7,24,.07);
     position: relative;
     overflow: hidden;
     transition: .3s;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .hero-service-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(75, 7, 24, .12);
+    box-shadow: 0 18px 40px rgba(75,7,24,.12);
 }
 
 .hero-service-card::after {
     content: "";
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background: rgba(201, 154, 67, .07);
+    background: rgba(201,154,67,.07);
     right: -80px;
     bottom: -90px;
 }
 
 .hero-service-icon {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: grid;
     place-items: center;
     background: var(--gold);
     color: white;
-    font-size: 27px;
-    margin-bottom: 25px;
+    font-size: 23px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
 .hero-service-card h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    margin-bottom: 15px;
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 12px;
     color: var(--dark);
 }
 
 .hero-service-card p {
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 25px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
 .hero-service-link {
     color: var(--burgundy);
     font-weight: 800;
-    font-size: 14px;
+    font-size: 12px;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     margin-top: auto;
     position: relative;
     z-index: 2;
@@ -311,38 +309,10 @@ header {
     transform: translateX(5px);
 }
 
-
-/* RESPONSIVE SERVICE HERO */
-
-@media(max-width: 900px) {
-    .service-hero-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 600px) {
-    .service-hero {
-        padding: 45px 0 60px;
-    }
-
-    .service-hero-heading {
-        margin-bottom: 30px;
-    }
-
-    .service-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-service-card {
-        min-height: 300px;
-        padding: 30px;
-    }
-    }
-    
 /* GENERAL SECTIONS */
 
 .section {
-    padding: 95px 0;
+    padding: 90px 0;
 }
 
 .section-heading {
@@ -358,7 +328,7 @@ header {
 
 .section-heading h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 43px);
+    font-size: clamp(30px,4vw,43px);
     color: var(--dark);
     line-height: 1.2;
     margin-bottom: 16px;
@@ -373,13 +343,13 @@ header {
     font-size: 15px;
 }
 
-/* INTRODUCTION */
+/* ABOUT */
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 65px;
+    gap: 60px;
 }
 
 .about-image {
@@ -423,18 +393,19 @@ header {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .service-card {
     background: white;
-    padding: 38px 30px;
+    padding: 30px 22px;
     border-radius: 8px;
     border: 1px solid #eee5e4;
     transition: .3s;
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 110px;
 }
 
 .service-card:before {
@@ -453,27 +424,28 @@ header {
 }
 
 .service-icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     display: grid;
     place-items: center;
     background: #f8edf0;
     color: var(--burgundy);
-    font-size: 26px;
+    font-size: 24px;
     border-radius: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 23px;
+    font-size: 20px;
+    line-height: 1.4;
     margin-bottom: 13px;
 }
 
 .service-card p {
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 24px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
 .learn-more {
@@ -499,7 +471,7 @@ header {
 
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
 }
 
@@ -528,7 +500,7 @@ header {
 
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 30px;
 }
 
@@ -551,7 +523,7 @@ header {
 }
 
 .process-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
     margin-bottom: 10px;
 }
 
@@ -563,7 +535,7 @@ header {
 /* CTA */
 
 .cta {
-    background: linear-gradient(120deg, var(--burgundy), var(--dark-burgundy));
+    background: linear-gradient(120deg,var(--burgundy),var(--dark-burgundy));
     color: white;
     padding: 65px 35px;
     border-radius: 12px;
@@ -571,7 +543,7 @@ header {
 }
 
 .cta h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
     font-size: 38px;
     margin-bottom: 15px;
 }
@@ -579,6 +551,67 @@ header {
 .cta p {
     color: #f1dfe3;
     margin-bottom: 25px;
+}
+
+/* FOUNDING MEMBERS */
+
+.founders-section {
+    background: var(--cream);
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.founder-card {
+    text-align: center;
+    padding: 12px 8px;
+}
+
+.founder-photo {
+    width: 170px;
+    height: 170px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg,#f0e5e5,#e7d9d5);
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 24px rgba(75,7,24,.12);
+    color: var(--burgundy);
+}
+
+.founder-photo i {
+    font-size: 54px;
+    opacity: .65;
+}
+
+.founder-card h3 {
+    color: var(--dark);
+    font-family: 'Playfair Display',serif;
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+}
+
+.founder-card p {
+    color: var(--burgundy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.founder-note {
+    max-width: 680px;
+    margin: 35px auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
 }
 
 /* CONTACT */
@@ -597,7 +630,7 @@ header {
 }
 
 .contact-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
     font-size: 27px;
     margin-bottom: 20px;
 }
@@ -621,7 +654,7 @@ header {
 }
 
 .contact-form h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
     font-size: 28px;
     margin-bottom: 25px;
 }
@@ -676,7 +709,7 @@ footer {
 }
 
 .footer-brand {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
     font-size: 27px;
     color: white;
 }
@@ -699,6 +732,10 @@ footer {
     font-size: 13px;
 }
 
+.footer-links a:hover {
+    color: var(--gold);
+}
+
 .footer-bottom {
     border-top: 1px solid #50313b;
     padding-top: 20px;
@@ -707,7 +744,7 @@ footer {
     font-size: 12px;
 }
 
-/* FLOATING CONTACT */
+/* BACK TO TOP */
 
 .back-top {
     position: fixed;
@@ -724,9 +761,24 @@ footer {
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
-@media(max-width: 900px) {
+@media(max-width:1100px) {
+    .service-hero-grid,
+    .service-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .hero-service-card {
+        min-height: 300px;
+    }
+
+    .founders-grid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+}
+
+@media(max-width:900px) {
     .navlinks {
         display: none;
         position: absolute;
@@ -738,6 +790,7 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 0 10px 20px rgba(0,0,0,.1);
+        gap: 15px;
     }
 
     .navlinks.open {
@@ -752,39 +805,58 @@ footer {
         display: none;
     }
 
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-left: 3px solid var(--gold);
+        border-radius: 0;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .why-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .founders-grid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
     }
 }
 
-@media(max-width: 600px) {
-    .hero {
-        min-height: 580px;
-        background-position: 60% center;
+@media(max-width:600px) {
+    .service-hero {
+        padding: 45px 0 60px;
     }
 
-    .hero-content {
-        padding: 75px 0;
+    .service-hero-heading {
+        margin-bottom: 30px;
     }
 
-    .section {
-        padding: 70px 0;
-    }
-
+    .service-hero-grid,
     .service-grid,
     .why-grid,
     .process-grid,
     .footer-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-service-card {
+        min-height: 270px;
+        padding: 30px;
+    }
+
+    .section {
+        padding: 70px 0;
     }
 
     .about-image {
@@ -798,85 +870,9 @@ footer {
     .cta h2 {
         font-size: 29px;
     }
-    @media(max-width: 600px) {
-    .brand img {
-        height: 55px;
-        max-width: 170px;
-    }
-    }
-}
 
-
-/* FOUNDING MEMBERS */
-.founders-section {
-    background: var(--cream);
-}
-
-.founders-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
-}
-
-.founder-card {
-    text-align: center;
-    padding: 12px 8px;
-}
-
-.founder-photo {
-    width: 170px;
-    height: 170px;
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(145deg, #f0e5e5, #e7d9d5);
-    border: 5px solid var(--white);
-    box-shadow: 0 8px 24px rgba(75, 7, 24, .12);
-    color: var(--burgundy);
-}
-
-.founder-photo i {
-    font-size: 54px;
-    opacity: .65;
-}
-
-.founder-card h3 {
-    color: var(--dark);
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.35;
-    margin-bottom: 5px;
-}
-
-.founder-card p {
-    color: var(--burgundy);
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.founder-note {
-    max-width: 680px;
-    margin: 35px auto 0;
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-}
-
-@media(max-width: 900px) {
     .founders-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        row-gap: 30px;
-    }
-}
-
-@media(max-width: 600px) {
-    .founders-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
         gap: 25px 12px;
     }
 
@@ -892,20 +888,12 @@ footer {
     .founder-card h3 {
         font-size: 16px;
     }
-}
 
-    .brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+    .brand img {
+        height: 55px;
+        max-width: 170px;
+    }
 }
-
-.brand img {
-    height: 70px;
-    width: auto;
-    max-width: 220px;
-    object-fit: contain;
-                                }
 </style>
 </head>
 
@@ -915,7 +903,7 @@ footer {
 <div class="container nav">
 
     <a href="#home" class="brand">
-    <img src="logimac-logo.jpg" alt="Logimac Advisory Ltd Logo">
+        <img src="logimac-logo.jpg" alt="Logimac Advisory Ltd Logo">
     </a>
 
     <button class="menu" onclick="navToggle()" aria-label="Toggle menu">
@@ -923,12 +911,34 @@ footer {
     </button>
 
     <nav class="navlinks" id="navlinks">
+
         <a href="#home">Home</a>
-         <a href="#about">About Us</a> 
-       <!-- <a href="#founders">Founders</a>-->
-        <a href="#services">Our Services</a>
+        <a href="#about">About Us</a>
+
+        <!-- SERVICES DROPDOWN -->
+        <div class="dropdown">
+
+            <button class="dropdown-toggle" onclick="toggleServicesDropdown(event)" aria-expanded="false" id="servicesDropdownButton">
+                Our Services
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu" id="servicesDropdown">
+
+                <a href="#business-advisory">Business Advisory</a>
+
+                <a href="#legal-advisory">Legal Advisory</a>
+
+                <a href="#travel-consultancy">Travel Consultancy</a>
+
+                <a href="#customer-experience">Customer Experience Training & Management</a>
+
+            </div>
+        </div>
+
         <a href="#why">Why Choose Us</a>
         <a href="#contact">Contact</a>
+
     </nav>
 
     <a href="#contact" class="btn">
@@ -939,182 +949,197 @@ footer {
 </header>
 
 <main>
-    
+
 <!-- SERVICE SELECTION HERO -->
+
 <section class="service-hero" id="home">
-    <div class="container">
-        <div class="service-hero-heading">
-          <div class="eyebrow">Logimac Advisory Ltd</div>
-            
-            <h1>Choose Your <span>Advisory Service</span></h1>
-            <!--   <p>
-                Whether it's your business, legal needs or travel plans —
-                Logimac Advisory is here to guide you.
-            </p>
-            -->
-        </div>
 
-        <div class="service-hero-grid">
-
-            <!-- BUSINESS ADVISORY -->
-            <article class="hero-service-card business-card">
-
-                <div class="hero-service-icon">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-
-                <h2>Business Advisory</h2>
-
-                <p>
-                    Strategic guidance and professional support
-                    to help you make informed business decisions
-                    and grow with confidence.
-                </p>
-
-                <a href="#business-advisory" class="hero-service-link">
-                    Explore Business Advisory
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-            <!-- LEGAL ADVISORY -->
-            <article class="hero-service-card legal-card">
-
-                <div class="hero-service-icon">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                </div>
-
-                <h2>Legal Advisory</h2>
-
-                <p>
-                    Professional guidance on legal matters,
-                    documentation and compliance to help you
-                    navigate important decisions.
-                </p>
-
-                <a href="#legal-advisory" class="hero-service-link">
-                    Explore Legal Advisory
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-            <!-- TRAVEL CONSULTANCY -->
-            <article class="hero-service-card travel-card">
-
-                <div class="hero-service-icon">
-                    <i class="fa-solid fa-plane-departure"></i>
-                </div>
-
-                <h2>Travel Consultancy</h2>
-
-                <p>
-                    Travel planning and consultancy support
-                    to make your travel arrangements simpler,
-                    organised and convenient.
-                </p>
-
-                <a href="#travel-consultancy" class="hero-service-link">
-                    Explore Travel
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </article>
-
-        </div>
-
-    </div>
-</section>
-
-
-
-<!-- FOUNDING MEMBERS -->
-    <!--
-<section class="section founders-section" id="founders">
 <div class="container">
 
-    <div class="section-heading">
-        <div class="eyebrow">The People Behind Logimac</div>
-        <h2>Meet Our <span>Founding Members</span></h2>
-        <p>
-            The individuals behind the vision, values and direction
-            of Logimac Advisory Ltd.
-        </p>
-    </div>
+    <div class="service-hero-heading">
 
-    <div class="founders-grid">
+        <div class="eyebrow">Logimac Advisory Ltd</div>
 
-        <article class="founder-card">
-            <div class="founder-photo" aria-label="Photograph space for Founding Member 1">
-                <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-            <h3>Founder's Name</h3>
-            <p>Founding Member</p>
-        </article>
-
-        <article class="founder-card">
-            <div class="founder-photo" aria-label="Photograph space for Founding Member 2">
-                <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-            <h3>Founder's Name</h3>
-            <p>Founding Member</p>
-        </article>
-
-        <article class="founder-card">
-            <div class="founder-photo" aria-label="Photograph space for Founding Member 3">
-                <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-            <h3>Founder's Name</h3>
-            <p>Founding Member</p>
-        </article>
-
-        <article class="founder-card">
-            <div class="founder-photo" aria-label="Photograph space for Founding Member 4">
-                <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-            <h3>Founder's Name</h3>
-            <p>Founding Member</p>
-        </article>
-
-        <article class="founder-card">
-            <div class="founder-photo" aria-label="Photograph space for Founding Member 5">
-                <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-            <h3>Founder's Name</h3>
-            <p>Founding Member</p>
-        </article>
+        <h1>Choose Your <span>Advisory Service</span></h1>
 
     </div>
-<!--
-    <p class="founder-note">
-        Founder photographs and profile details can be added to each space
-        when the official portraits and names are available.
-    </p>
+
+    <div class="service-hero-grid">
+
+        <!-- BUSINESS ADVISORY -->
+
+        <article class="hero-service-card">
+
+            <div class="hero-service-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h2>Business Advisory</h2>
+
+            <p>
+                Strategic guidance and professional support
+                to help you make informed business decisions
+                and grow with confidence.
+            </p>
+
+            <a href="#business-advisory" class="hero-service-link">
+                Explore Business Advisory
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- LEGAL ADVISORY -->
+
+        <article class="hero-service-card">
+
+            <div class="hero-service-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <h2>Legal Advisory</h2>
+
+            <p>
+                Professional guidance on legal matters,
+                documentation and compliance to help you
+                navigate important decisions.
+            </p>
+
+            <a href="#legal-advisory" class="hero-service-link">
+                Explore Legal Advisory
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- TRAVEL CONSULTANCY -->
+
+        <article class="hero-service-card">
+
+            <div class="hero-service-icon">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+
+            <h2>Travel Consultancy</h2>
+
+            <p>
+                Travel planning and consultancy support
+                to make your travel arrangements simpler,
+                organised and convenient.
+            </p>
+
+            <a href="#travel-consultancy" class="hero-service-link">
+                Explore Travel
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- CUSTOMER EXPERIENCE -->
+
+        <article class="hero-service-card">
+
+            <div class="hero-service-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h2>Customer Experience Training & Management</h2>
+
+            <p>
+                Improving customer interactions, service delivery,
+                team performance and customer satisfaction
+                through training and management support.
+            </p>
+
+            <a href="#customer-experience" class="hero-service-link">
+                Explore CX Services
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+    </div>
 
 </div>
 </section>
--->
-    
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+    <div class="about-grid">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <div class="eyebrow" style="color:var(--burgundy)">
+                About Logimac
+            </div>
+
+            <h2>Insight. Strategy. <span>Growth.</span></h2>
+
+            <p>
+                Logimac Advisory Ltd is committed to providing
+                professional advisory and consultancy services
+                that help individuals, businesses and organisations
+                navigate challenges, make informed decisions
+                and achieve their goals.
+            </p>
+
+            <p>
+                Through our diverse areas of expertise, we offer
+                practical guidance, strategic insight and
+                professional support tailored to the needs
+                of our clients.
+            </p>
+
+            <div class="about-highlight">
+                Each day brings us closer to you.
+            </div>
+
+            <a href="#services" class="btn">
+                Explore Our Services
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
 <!-- SERVICES -->
-    <!--
+
 <section class="section services" id="services">
+
 <div class="container">
 
     <div class="section-heading">
+
         <div class="eyebrow">What We Do</div>
 
-        <h2>Our <span>Advisory Services</span></h2>
+        <h2>Our <span>Services</span></h2>
 
         <p>
-            Three areas of expertise. One commitment:
-            helping you make better decisions and move forward.
+            Professional solutions designed to support
+            individuals, businesses and organisations
+            across different areas of need.
         </p>
+
     </div>
 
     <div class="service-grid">
 
+        <!-- BUSINESS ADVISORY -->
+
         <article class="service-card" id="business-advisory">
+
             <div class="service-icon">
                 <i class="fa-solid fa-chart-line"></i>
             </div>
@@ -1122,17 +1147,23 @@ footer {
             <h3>Business Advisory</h3>
 
             <p>
-                Strategic business guidance, planning and
-                professional support to help businesses
-                identify opportunities and achieve sustainable growth.
+                We provide strategic business guidance,
+                planning support and professional insights
+                to help businesses improve operations,
+                make informed decisions and achieve sustainable growth.
             </p>
 
             <a href="#contact" class="learn-more">
-                Enquire Now →
+                Enquire About This Service
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
+
         </article>
 
+        <!-- LEGAL ADVISORY -->
+
         <article class="service-card" id="legal-advisory">
+
             <div class="service-icon">
                 <i class="fa-solid fa-scale-balanced"></i>
             </div>
@@ -1140,17 +1171,23 @@ footer {
             <h3>Legal Advisory</h3>
 
             <p>
-                Guidance on legal matters, documentation
-                and compliance to help clients understand
-                their obligations and make informed decisions.
+                We provide guidance and advisory support
+                on legal matters, documentation, regulatory
+                requirements and compliance to help clients
+                navigate legal processes and decisions.
             </p>
 
             <a href="#contact" class="learn-more">
-                Enquire Now →
+                Enquire About This Service
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
+
         </article>
 
+        <!-- TRAVEL CONSULTANCY -->
+
         <article class="service-card" id="travel-consultancy">
+
             <div class="service-icon">
                 <i class="fa-solid fa-plane-departure"></i>
             </div>
@@ -1158,116 +1195,281 @@ footer {
             <h3>Travel Consultancy</h3>
 
             <p>
-                Travel planning and consultancy support
-                designed to make your travel arrangements
-                more informed, organised and convenient.
+                Our travel consultancy services provide
+                guidance, planning support and assistance
+                with travel arrangements to help clients
+                plan their journeys conveniently.
             </p>
 
             <a href="#contact" class="learn-more">
-                Enquire Now →
+                Enquire About This Service
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
+
+        </article>
+
+        <!-- CUSTOMER EXPERIENCE -->
+
+        <article class="service-card" id="customer-experience">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Customer Experience Training & Management</h3>
+
+            <p>
+                We support organisations in improving customer
+                service delivery through customer experience
+                training, service quality management,
+                team development and performance improvement.
+            </p>
+
+            <a href="#contact" class="learn-more">
+                Enquire About This Service
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
         </article>
 
     </div>
+
 </div>
 </section>
--->
-    
-<!-- WHY US -->
-    <!--
+
+
+<!-- WHY CHOOSE US -->
+
 <section class="section why" id="why">
+
 <div class="container">
 
     <div class="section-heading">
-        <div class="eyebrow">The Logimac Difference</div>
 
-        <h2>Why Work With Us?</h2>
+        <div class="eyebrow">Why Logimac</div>
+
+        <h2>Why <span>Choose Us?</span></h2>
 
         <p>
-            We believe good advice creates better decisions
-            and better opportunities.
+            We are focused on providing professional,
+            practical and client-centred advisory solutions.
         </p>
+
     </div>
 
     <div class="why-grid">
 
         <div class="why-item">
-            <i class="fa-solid fa-handshake"></i>
-            <h3>Client Focused</h3>
-            <p>We place our clients' needs and objectives at the centre of our approach.</p>
-        </div>
 
-        <div class="why-item">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h3>Strategic Thinking</h3>
-            <p>We value informed decisions and practical solutions.</p>
-        </div>
-
-        <div class="why-item">
             <i class="fa-solid fa-user-tie"></i>
-            <h3>Professional Approach</h3>
-            <p>We are committed to professionalism and responsible service.</p>
+
+            <h3>Professional Expertise</h3>
+
+            <p>
+                Professional guidance and knowledge
+                across our areas of consultancy.
+            </p>
+
         </div>
 
         <div class="why-item">
-            <i class="fa-solid fa-people-group"></i>
-            <h3>Personal Attention</h3>
-            <p>We aim to understand each client's unique requirements.</p>
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <h3>Client Focus</h3>
+
+            <p>
+                We place our clients' needs, goals
+                and experiences at the centre of our work.
+            </p>
+
+        </div>
+
+        <div class="why-item">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>Practical Solutions</h3>
+
+            <p>
+                Thoughtful recommendations and
+                solutions focused on real challenges.
+            </p>
+
+        </div>
+
+        <div class="why-item">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <h3>Growth & Improvement</h3>
+
+            <p>
+                We support progress, improvement
+                and long-term growth.
+            </p>
+
         </div>
 
     </div>
+
 </div>
 </section>
 
-<!-- HOW WE WORK -->
-    <!--
+
+<!-- PROCESS -->
+
 <section class="section">
+
 <div class="container">
 
     <div class="section-heading">
-        <div class="eyebrow">Our Approach</div>
-        <h2>How We <span>Work</span></h2>
-        <p>A straightforward approach to understanding your needs and providing guidance.</p>
+
+        <div class="eyebrow">How We Work</div>
+
+        <h2>Our <span>Approach</span></h2>
+
+        <p>
+            We take a structured approach to understanding
+            your needs and delivering the right support.
+        </p>
+
     </div>
 
     <div class="process-grid">
 
         <div class="process-item">
+
             <div class="process-number">01</div>
-            <h3>Understand</h3>
-            <p>We listen to your needs, challenges and objectives.</p>
+
+            <h3>Understand Your Needs</h3>
+
+            <p>
+                We listen to your concerns, goals,
+                challenges and requirements.
+            </p>
+
         </div>
 
         <div class="process-item">
+
             <div class="process-number">02</div>
-            <h3>Advise</h3>
-            <p>We explore your requirements and discuss suitable solutions.</p>
+
+            <h3>Provide Guidance</h3>
+
+            <p>
+                We explore relevant solutions and
+                provide professional guidance.
+            </p>
+
         </div>
 
         <div class="process-item">
+
             <div class="process-number">03</div>
-            <h3>Move Forward</h3>
-            <p>We support you as you take the next steps towards your goals.</p>
+
+            <h3>Support Your Progress</h3>
+
+            <p>
+                We work towards helping you move forward
+                with confidence and clarity.
+            </p>
+
         </div>
 
     </div>
+
 </div>
 </section>
 
-<!-- CTA -->
-    <!--
-<section class="section">
+
+<!-- FOUNDING MEMBERS -->
+
+<!--
+<section class="section founders-section" id="founders">
+
 <div class="container">
-    <div class="cta">
 
-        <div class="eyebrow">Let's Begin Your Journey</div>
+    <div class="section-heading">
 
-        <h2>Your Next Step Starts Here.</h2>
+        <div class="eyebrow">The People Behind Logimac</div>
+
+        <h2>Meet Our <span>Founding Members</span></h2>
 
         <p>
-            Whether you are growing a business, seeking
-            advisory support or planning your next journey,
-            we are ready to hear from you.
+            The individuals behind the vision, values
+            and direction of Logimac Advisory Ltd.
+        </p>
+
+    </div>
+
+    <div class="founders-grid">
+
+        <article class="founder-card">
+            <div class="founder-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+        <article class="founder-card">
+            <div class="founder-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Founder's Name</h3>
+            <p>Founding Member</p>
+        </article>
+
+    </div>
+
+    <p class="founder-note">
+        Our founding members bring together the vision
+        and commitment that drive Logimac Advisory Ltd.
+    </p>
+
+</div>
+</section>
+-->
+
+
+<!-- CALL TO ACTION -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="cta">
+
+        <h2>Ready to Move Forward?</h2>
+
+        <p>
+            Let Logimac Advisory Ltd help you navigate
+            your next step with confidence.
         </p>
 
         <a href="#contact" class="btn btn-outline">
@@ -1276,47 +1478,64 @@ footer {
         </a>
 
     </div>
+
 </div>
 </section>
--->
+
+
 <!-- CONTACT -->
-    <!--
+
 <section class="section" id="contact">
+
 <div class="container">
 
     <div class="section-heading">
-        <div class="eyebrow">Contact Us</div>
-        <h2>Let's <span>Talk.</span></h2>
-        <p>Tell us what you need. Our team would be glad to hear from you.</p>
+
+        <div class="eyebrow">Get in Touch</div>
+
+        <h2>Contact <span>Logimac</span></h2>
+
+        <p>
+            Reach out to us for professional guidance,
+            consultation or any of our advisory services.
+        </p>
+
     </div>
 
     <div class="contact-grid">
 
         <div class="contact-info">
 
-            <h3>Connect With Logimac</h3>
+            <h3>Let's Talk</h3>
 
             <p>
-                Reach out to discuss your requirements
-                or make an enquiry about our services.
+                We would be glad to hear from you.
+                Contact us or submit an enquiry
+                through the form.
             </p>
 
-            <!-- Replace with official company details -->
-    
-<!--
             <div class="contact-detail">
+
                 <i class="fa-solid fa-envelope"></i>
+
                 <span>Company email to be added</span>
+
             </div>
 
             <div class="contact-detail">
+
                 <i class="fa-solid fa-phone"></i>
+
                 <span>Company phone number to be added</span>
+
             </div>
 
             <div class="contact-detail">
+
                 <i class="fa-solid fa-location-dot"></i>
+
                 <span>Company office location to be added</span>
+
             </div>
 
         </div>
@@ -1328,58 +1547,91 @@ footer {
             <form id="contactForm">
 
                 <div class="field">
+
                     <label for="name">Full Name *</label>
+
                     <input id="name" name="name" required
                            placeholder="Enter your full name">
+
                 </div>
 
                 <div class="field">
+
                     <label for="email">Email Address *</label>
+
                     <input id="email" name="email" type="email"
                            required placeholder="Enter your email">
+
                 </div>
 
                 <div class="field">
+
                     <label for="service">Service of Interest *</label>
+
                     <select id="service" name="service" required>
+
                         <option value="">Select a service</option>
+
                         <option>Business Advisory</option>
+
                         <option>Legal Advisory</option>
+
                         <option>Travel Consultancy</option>
+
+                        <option>Customer Experience Training and Management</option>
+
                         <option>General Enquiry</option>
+
                     </select>
+
                 </div>
 
                 <div class="field">
+
                     <label for="message">How can we assist you? *</label>
+
                     <textarea id="message" name="message"
                               required placeholder="Write your enquiry here..."></textarea>
+
                 </div>
 
                 <button class="btn" type="submit">
+
                     Submit Enquiry
+
                     <i class="fa-solid fa-paper-plane"></i>
+
                 </button>
 
-                <p id="formStatus" style="margin-top:15px;font-size:13px;color:#750c25"></p>
+                <p id="formStatus"
+                   style="margin-top:15px;font-size:13px;color:#750c25">
+
+                </p>
 
             </form>
 
         </div>
 
     </div>
+
 </div>
 </section>
 
 </main>
--->
+
+
+<!-- FOOTER -->
+
 <footer>
+
 <div class="container">
 
     <div class="footer-grid">
 
         <div>
+
             <div class="footer-brand">LOGIMAC</div>
+
             <strong style="color:#e6bd79;letter-spacing:3px;font-size:11px">
                 ADVISORY LTD
             </strong>
@@ -1388,64 +1640,151 @@ footer {
                 Insight. Strategy. Growth.<br>
                 Each day brings us closer to you.
             </p>
+
         </div>
 
         <div>
+
             <h4>Quick Links</h4>
+
             <div class="footer-links">
+
                 <a href="#home">Home</a>
+
                 <a href="#about">About Us</a>
-               <!-- <a href="#founders">Founders</a>-->
+
                 <a href="#services">Our Services</a>
+
+                <a href="#why">Why Choose Us</a>
+
                 <a href="#contact">Contact</a>
+
             </div>
+
         </div>
 
         <div>
+
             <h4>Our Services</h4>
+
             <div class="footer-links">
-                <a href="#services">Business Advisory</a>
-                <a href="#services">Legal Advisory</a>
-                <a href="#services">Travel Consultancy</a>
+
+                <a href="#business-advisory">Business Advisory</a>
+
+                <a href="#legal-advisory">Legal Advisory</a>
+
+                <a href="#travel-consultancy">Travel Consultancy</a>
+
+                <a href="#customer-experience">Customer Experience Training & Management</a>
+
             </div>
+
         </div>
 
     </div>
 
     <div class="footer-bottom">
+
         © 2026 Logimac Advisory Ltd. All Rights Reserved.
+
         <br>
+
         Insight. Strategy. Growth.
+
     </div>
 
 </div>
 </footer>
 
+
+<!-- BACK TO TOP -->
+
 <a href="#home" class="back-top" aria-label="Back to top">
+
     <i class="fa-solid fa-arrow-up"></i>
+
 </a>
 
+
+<!-- JAVASCRIPT -->
+
 <script>
+
 function navToggle() {
+
     document.getElementById('navlinks').classList.toggle('open');
+
 }
 
-document.querySelectorAll('.navlinks a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('navlinks').classList.remove('open');
-    });
+
+/* SERVICES DROPDOWN */
+
+function toggleServicesDropdown(event) {
+
+    event.stopPropagation();
+
+    const dropdown = document.getElementById('servicesDropdown');
+
+    const button = document.getElementById('servicesDropdownButton');
+
+    dropdown.classList.toggle('show');
+
+    button.setAttribute(
+        'aria-expanded',
+        dropdown.classList.contains('show')
+    );
+
+}
+
+
+/* CLOSE DROPDOWN WHEN CLICKING OUTSIDE */
+
+document.addEventListener('click', function(event) {
+
+    const dropdown = document.getElementById('servicesDropdown');
+
+    const button = document.getElementById('servicesDropdownButton');
+
+    if (!event.target.closest('.dropdown')) {
+
+        dropdown.classList.remove('show');
+
+        button.setAttribute('aria-expanded', 'false');
+
+    }
+
 });
 
-/* Enquiry form demonstration.
-   Connect a form service before accepting live enquiries. */
+
+/* CLOSE MOBILE MENU AFTER CLICKING NAV LINKS */
+
+document.querySelectorAll('.navlinks a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        document.getElementById('navlinks').classList.remove('open');
+
+        document.getElementById('servicesDropdown').classList.remove('show');
+
+        document.getElementById('servicesDropdownButton')
+            .setAttribute('aria-expanded', 'false');
+
+    });
+
+});
+
+
+/* ENQUIRY FORM DEMONSTRATION */
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
+
     e.preventDefault();
 
     document.getElementById('formStatus').textContent =
         'Thank you for your enquiry. Please connect the company email service to enable delivery.';
 
 });
+
 </script>
 
 </body>
