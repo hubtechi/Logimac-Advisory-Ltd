@@ -944,6 +944,26 @@ footer {
     min-height: 420px;
     border-radius: 12px;
     }
+
+    .choose-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.choose-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: var(--dark);
+}
+
+.choose-list .tick {
+    color: #800020;
+    font-weight: bold;
+    flex-shrink: 0;
+    }
     
 </style>
 </head>
@@ -1175,18 +1195,14 @@ footer {
 
         <div class="eyebrow">Why Logimac</div>
 
-        <h2>Why <span>Choose Us?</span></h2>
+<h2>Why <span>Choose Us?</span></h2>
 
-<p>
-    <span style="color:#800020;">✔</span> Professional and <br>
-    experienced team <br>
-
-    <span style="color:#800020;">✔</span> Tailored solutions <br>
-
-    <span style="color:#800020;">✔</span> Measurable results <br>
-
-    <span style="color:#800020;">✔</span> Customer-focused approach<br>
-</p>
+<ul class="choose-list">
+    <li><span class="tick">✔</span> Professional and experienced team</li>
+    <li><span class="tick">✔</span> Tailored solutions</li>
+    <li><span class="tick">✔</span> Measurable results</li>
+    <li><span class="tick">✔</span> Customer-focused approach</li>
+</ul>
 
     <div class="why-grid">
 
